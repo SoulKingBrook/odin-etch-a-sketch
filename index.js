@@ -16,7 +16,16 @@ for(let i=0;i<square*square;i++){
 function onHover(e){
     if(mousedown){
         console.log(e.type)
-        e.target.style.backgroundColor=`rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`
+        if(e.target.style.backgroundColor==''){
+            e.target.style.backgroundColor=`rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`
+        }
+        else{
+            let rgb=''+e.target.style.backgroundColor
+            let curr=rgb.slice(4,-1).split(',')
+            console.log(rgb.slice(4,-1).split(','))
+            console.log(e.target.style.backgroundColor)
+            e.target.style.backgroundColor=`rgb(${curr[0]-0.1*curr[0]},${curr[1]-0.1*curr[1]},${curr[2]-0.1*curr[2]})`
+        }
     }
 }
 function onMouse(e){
