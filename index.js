@@ -1,5 +1,5 @@
 const container=document.querySelector('.container')
-var square=64
+var square=6
 let sqrp=square/(square*square)*100
 container.style.setProperty('grid-template-columns','repeat(auto-fit,'+ sqrp+'%'+')')
 
